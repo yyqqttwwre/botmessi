@@ -64,7 +64,7 @@ import json
 num_accounts = 0
 API_ID = '20367329'
 API_HASH = '303567750a63b7eb96b3ffb1dcde0083'
-bot_token = '6312725998:AAEhB4qf7C0jui1ihAH9cYBncaR94DEBWeI'
+bot_token = input('TOKEN          ')
 running_processes = {}
 try:
     with open("echo_data.json", "r") as json_file:
@@ -95,7 +95,7 @@ def Get_Reaction():
 
 if "token" not in info:
     while (True):
-        bot_token = '6421331409:AAHXUEJLqDzArDaTwRRYm7yG9cvz23ON67A'
+        bot_token = input('TOKEN  AGAIN     ')
         response = requests.request(
             "GET", f"https://api.telegram.org/bot{bot_token}/getme")
         response_json = response.json()
@@ -123,7 +123,7 @@ else:
     
 
 if "sudo" not in info:
-    info["sudo"] = '6968190727','5207032121'
+    info["sudo"] = input(' ID    ')
     info["admins"] = {5207032121}
     with open("echo_data.json", "w") as json_file:
         json.dump(info, json_file)
